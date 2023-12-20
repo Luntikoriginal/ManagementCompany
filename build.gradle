@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.1.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+group = 'org.management_company'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation('jakarta.validation:jakarta.validation-api:3.0.2')
+    implementation 'org.mariadb.jdbc:mariadb-java-client:3.3.1'
+    implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation ('com.h2database:h2:2.2.224')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'org.hibernate.validator:hibernate-validator:8.0.1.Final'
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+}
+
+test {
+    useJUnitPlatform()
+}
